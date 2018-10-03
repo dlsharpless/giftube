@@ -1,35 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
+
 <body>
     <div class="container">
-        <div class="heading">
-            <h1>Search</h1>
+        <!-- Row 1 for header -->
+        <div class="row1 justify-content-center">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <h1>Search</h1>
+            </div>
         </div>
-        <div class="parameters">
-            <h3>Search Parameters</h3>
-            <form class="userInputs">
-                <label for="#searchTerm">Search Term:</label><br>
-                <input id="searchTerm"><br>
-                <label for="#numberOfRecords">Number of Records to Retrieve:</label><br>
-                <select id="numberOfRecords">
-                        <option value="5">5</option>
-                        <option value="10">10</option>
-                        <option value="15">15</option>
-                </select><br>
-                <label for="#startYear">Start Year (Optional):</label><br>
-                <input id="startYear"><br>
-                <label for="#endYear">End Year (Optional):</label><br>
-                <input id="endYear"><br>
-                <button id="searchButton">Search</button>
-                <button id="clearButton">Clear</button>
-            </form>
+        <!-- Row 2 for form -->
+        <div class="row justify-content-center form_row ">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col_format">
+
+                <form class="form_formatting">
+                    <div class="form-group">
+                        <label for="serachTerm">Search Item</label>
+                        <input type="search" class="form-control p-5" id="serachTerm" placeholder="Search"><br><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="numberOfRecords">Number of Records to Retrieve:</label>
+                        <select id="numberOfRecords">
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                        </select><br><br>
+                    </div>
+                    <div class="form-group">
+                        <button id="searchButton">Search</button>
+                        <button id="clearButton">Clear</button>
+                    </div>
+                </form>
+            </div>
         </div>
-     </div>   
+        <!-- Row 3 for Gify result -->
+        <div class="row form_row row3" >
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 gify-search"></div>
+        </div>
+        <!-- Row 4 for meme result -->
+        <div class="row form_row row4">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 meme-search"></div>
+        </div>
+        <!-- Row 5 for youtube result -->
+        <div class="row form_row row5">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 youttube-search"></div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+
+    <script src="./meme.js"></script>
 </body>
+
 </html>
