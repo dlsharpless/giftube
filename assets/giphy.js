@@ -1,5 +1,5 @@
 let displayGIFs = function () {
-    $("#gifResults").empty();
+    $(".row3").empty();
     let inquiry = $("#searchTerm").val();
     let numberOfRecords = $("#numberOfRecords").val();
     let queryURL = `http://api.giphy.com/v1/gifs/search?q=${inquiry}&api_key=njATj4tDM5p7IszkVAvnA35pkQe9v1GP&limit=${numberOfRecords}`;
@@ -9,7 +9,7 @@ let displayGIFs = function () {
     }).then(function(response) {
         for (i = 0; i < numberOfRecords; i++) {
             let newGIF = $(`<img src=${response.data[i].images.fixed_height.url}>`);
-            $("#gifResults").append(newGIF);
+            $(".row3").append(newGIF);
         }
     })
 }
