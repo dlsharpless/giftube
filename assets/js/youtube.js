@@ -1,6 +1,5 @@
 let player;
 
-
 function youtube(event) {
   event.preventDefault();
   const apiKey = 'AIzaSyAfBQxSnvQmRhhgFE5qfViIVfDvZ_t-u1Q';
@@ -12,11 +11,9 @@ function youtube(event) {
     url: queryURL,
     method: 'GET'
   }).then(function (response) {
-    
-    
     let videoID = response.items[0].id.videoId
     // console.log(videoID)
-    player.loadVideoById(videoID)
+    player.cueVideoById(videoID)
   });
 }
 
@@ -33,10 +30,7 @@ function onYouTubePlayerAPIReady(videoID) {
   player = new YT.Player('player', {
     height: '300',
     width: '480',
-    videoId: videoID ? videoID : 'RIuKQPg5npE',
-  
+    videoId: videoID ? videoID : 'RIuKQPg5npE',  
   });
-
 }
-
 $('#searchButton').on('click', youtube)
