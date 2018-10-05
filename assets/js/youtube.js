@@ -30,7 +30,7 @@ function onYouTubePlayerAPIReady(videoArr) {
   for(let i = 0; i < videoArr.length; i++){
       new YT.Player('player' + i, {
           height: '200',
-          width: '300',
+          width: '200',
           videoId: videoArr[i]
       });
   }
