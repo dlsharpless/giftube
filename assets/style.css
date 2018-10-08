@@ -1,24 +1,53 @@
-.form_formatting {
-    background: #fff;
-    padding: 30px 50px 30px 50px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 0px #000;
-} 
+/* Styling for Gify results */
+.accordion .card-header:after {
+    font-family: 'FontAwesome';  
+    content: "\f068";
+    float: right; 
+}
+.accordion .card-header.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\f067"; 
+}
 
-.col_format {
-  background: #DAF7A6;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px 0px white;
-  margin-left: 30%;
-  width: 40%;
-  height: 50%;
-  text-align: center;
-  
-} 
+.format {
+    border-top: 15px solid #614396;
+    border-right: 15px solid #F9F58A;
+    border-bottom: 15px solid #5CBC72;
+    border-left: 15px solid #30B9F0;
+    padding: 30px;
+  } 
 
-h1{
-   text-align: center; 
-   font-family: 'Lobster', cursive;
-};
+  img {
+    vertical-align: middle;
+     border: 5px solid #F9F58A;
+}
 
+  body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #EB4F53;
+    text-align: left;
+    background-color: #fff;
+}
+
+h4{
+    font-family: 'Lobster', cursive;
+    font-weight: 900;
+    font-size: 60px;
+    color: #EB4F53;
+   
+ };
+
+
+
+
+
+
+
+
+
+
+    

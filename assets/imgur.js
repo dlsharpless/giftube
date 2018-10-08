@@ -38,7 +38,7 @@ let displayMemes = function () {
                 })();
             }
         }
-        console.log(numberOfResults);
+        $("#imgurTitle").text(`Imgur Memes (${numberOfResults})`);
     });
 }
 
