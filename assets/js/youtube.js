@@ -2,7 +2,7 @@ let player1;
 let videoArr = [];
 function youtube(event) {
   event.preventDefault();
-  $('.youtubeResults').empty(); 
+  $('.youtubeResults').empty();
   const apiKey = 'AIzaSyAfBQxSnvQmRhhgFE5qfViIVfDvZ_t-u1Q';
   let input = $("#searchTerm").val().trim();
   let queryURL = `https://content.googleapis.com/youtube/v3/search?q=${input}&maxResults=25&part=snippet&key=${apiKey}`;
