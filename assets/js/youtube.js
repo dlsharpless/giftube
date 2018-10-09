@@ -1,60 +1,68 @@
 let player1;
 let videoArr = [];
+let videoID = '';
+
+
+//youtube api call function starts here
 function youtube(event) {
   event.preventDefault();
-  // $('.videos').empty();
-  // videoArr = [];
-  const apiKey = 'AIzaSyAfBQxSnvQmRhhgFE5qfViIVfDvZ_t-u1Q';
+  //empty results for every new search
+  $('.youtubeResults').empty();
+
+  //grabbing value selected from dropdown for the number of results to display.
   let input = $("#searchTerm").val().trim();
+  let value = $("#numberOfRecords").val();
+  const apiKey = 'AIzaSyAfBQxSnvQmRhhgFE5qfViIVfDvZ_t-u1Q';
   let queryURL = `https://content.googleapis.com/youtube/v3/search?q=${input}&maxResults=25&part=snippet&key=${apiKey}`;
-  
-  // let removePlayer1 = document.getElementById('player1');
-  // removePlayer1.removeChild()
-  // $('#player1').empty();
-  // $('#player2').empty();
-  // $('#player3').empty();
-  // $('#player4').empty();
-  // $('#player5').empty();
+
+  //creates empty video array for video ids to be stored
+  videoArr = [];
 
   //Youtube API call to get video ids.
-$.ajax({
-  url: queryURL,
-  method: 'GET',
-  safeSearch: 'strict',
-}).then(function (response) {
-  //grabbing value selectedd from dropdown for the number of results to display.
-  let value = $('#numberOfRecords').val();
- 
-  //creates array that holds video ids according to the value is selected by the user. 
-  for (let i = 0; i <= `${value}`; i++) {
-    // if(response.data[0].rating != "r") {
-      console.log(response)
-      let videoID = response.items[i].id.videoId
-      videoArr.push(videoID)
-  //passes video array into the player
-  onYouTubePlayerAPIReady(videoArr);
-// } else {
-  
-  // }
-}
-});
+  $.ajax({
+    url: queryURL,
+    method: 'GET',
 
-function onYouTubePlayerAPIReady(videoArr) {
-  // Replace the 'ytplayer' element with an <iframe> and
-  // YouTube player after the API code downloads.
-  for(let i = 0; i < videoArr.length; i++){
-      new YT.Player('player' + i, {
-          height: '480',
-          width: '270',
-          videoId: videoArr[i],
-          // events: {
-          //   'onReady': onPlayerReady,
-          //   'onStateChange': onPlayerStateChange
-          // }
-      })
+  }).then(function (response) {
+    // console.log(response.items)
+
+    let numOfResults = 0;
+    
+    if (response.items[0]) {
+      
+      //creates array that holds video ids according to the value is selected by the user. 
+      for (let i = 0; i < `${value}`; i++) {
+        //creating variable for video id
+        videoID = response.items[i].id.videoId;
+        if(videoID){
+        
+        //pushing video ids into the array
+        videoArr.push(videoID);
+        
+        //dynamically creating the iframe player
+        $('.youtubeResults').append(`<iframe height="200" src="https://www.youtube-nocookie.com/embed/${videoID}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`);
+      
+      } else if (response.items.length > value) {
+        value++;
+    
+      }
     }
   }
+  
+    //If the length of the video array is less than the results requested
+    if (videoArr.length < value) {
+      
+      numOfResults = videoArr.length;
+      $('#youtubeTitle').text(`YouTube Videos [${numOfResults} Found]`)
+    } else if (numOfResults = value) {
+      
+      $('#youtubeTitle').text(`YouTube Videos [${value} Found]`)
+    } else {
+      $('#youtubeTitle').text('YouTube Videos [0 Found]')
+    }
+    
+  });
 }
 
-//click listener for search button
+//event listener for search button click
 $('#searchButton').on('click', youtube)

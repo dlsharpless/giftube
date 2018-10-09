@@ -1,49 +1,53 @@
-/* body{
-background-image: url("https://media.istockphoto.com/photos/shooting-star-stars-background-picture-id510212754?k=6&m=510212754&s=612x612&w=0&h=s2p09YKbBzOozzrPy1Ke7Z8zP0jve6yO190M5daRU9Y=")
-
-}; */
-
-/* body{
-    background-color: #FFFFAC;
-}; */
-
+/* Styling for Gify results */
+.accordion .card-header:after {
+    font-family: 'FontAwesome';  
+    content: "\f068";
+    float: right; 
+}
+.accordion .card-header.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\f067"; 
+}
 
 .format {
-  background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
-  radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 100px 0px white;
-  margin-left: 30%;
-} 
+    border-top: 15px solid #614396;
+    border-right: 15px solid #F9F58A;
+    border-bottom: 15px solid #5CBC72;
+    border-left: 15px solid #30B9F0;
+    padding: 30px;
+  } 
 
+  img {
+    vertical-align: middle;
+     border: 5px solid #F9F58A;
+}
 
+  body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #EB4F53;
+    text-align: left;
+    background-color: #fff;
+}
 
-.form_formatting {
-    background: linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 100%);
-    padding: 30px 50px 30px 50px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 0px #000;
-    
-}  
-
-h1{
+h4{
     font-family: 'Lobster', cursive;
-    padding-left: 550px;
-    margin-bottom: 20px;
-    color: #9f7928;
+    font-weight: 900;
+    font-size: 60px;
+    color: #EB4F53;
    
  };
 
- img{
-    border: 4px solid #ddd;
+
+
+
+
+
+
+
+
+
     
-};
-
-
-
-
-
-
-
-  
