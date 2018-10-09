@@ -19,8 +19,8 @@
 
 .accordion .card-body{
     /* symbol for "collapsed" panels */
-    background-color: #BABABA; 
-    background-image: url(./bedge_grunge.png);
+    background-color: #313B41; 
+   
 }
 .format {
     border-top: 15px solid #614396;
@@ -51,7 +51,7 @@
     font-size: 1.5rem;
     font-weight: 600;
     line-height: 1.5;
-    color: gray;
+    color: #252C30;
     text-align: left;
     background-color: #fff;
     background-image: url(./bedge_grunge_@2X.png);
@@ -60,14 +60,15 @@
 h4{
     font-family: 'Lobster', cursive;
     font-weight: 900;
-    font-size: 60px;
+    font-size: 65px;
     color: #EB4F53;
+    
    
  }
 
  footer{
      padding: 50px;
-     margin-left: 15%;
+     margin-left: 35%;
      padding-bottom: 0px;
  }
 

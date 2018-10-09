@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Bootstrap css -->
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+
     <!-- Favicon -->
     <link rel="icon" href="./assets/favicon.png">
     <title>Giftube</title>
-    <!-- Imported fonts -->
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <!-- Imported icon -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Imported fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
     <!-- Local styling -->
@@ -18,15 +21,15 @@
 </head>
 
 <body>
-<!-- HTM code for heading and Form-->
+    <!-- HTM code for heading and Form-->
     <div class="container">
-<!-- Row for header  -->
+        <!-- Row for header  -->
         <div class="row mt-2 mb-3 justify-content-center">
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <h4><img id="iconStyle" src="./assets/favicon.png" width="80" >  GifTube</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mt-2">
+                <h4><img id="iconStyle" src="./assets/favicon.png" width="80">GifTube</h4>
             </div>
         </div>
-<!-- Row 2 for form -->
+        <!-- Row 2 for form -->
         <div class="row mb-5 justify-content-center">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 format">
                 <form class="form_formatting">
@@ -50,14 +53,14 @@
             </div>
         </div>
     </div>
-<!-- HTML code for Accordion to display Giphy, meme, and YouTube results -->
+    <!-- HTML code for Accordion to display Giphy, meme, and YouTube results -->
     <div class="container-fluid">
         <div id="accordion" class="accordion">
             <div class="card mb-0">
                 <div class="card-header collapsed" data-toggle="collapse" href="#collapseOne">
                     <a class="card-title" id="giphyTitle">Giphy GIFs</a>
                 </div>
-                <div id="collapseOne" class="card-body collapse" data-parent="#accordion" >
+                <div id="collapseOne" class="card-body collapse" data-parent="#accordion">
                     <div class="card-body gifResults">
                         <!-- GIF results go here -->
                     </div>
@@ -65,7 +68,7 @@
                 <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
                     <a class="card-title" id="imgurTitle">Imgur Memes</a>
                 </div>
-                <div id="collapseTwo" class="card-body collapse" data-parent="#accordion" >
+                <div id="collapseTwo" class="card-body collapse" data-parent="#accordion">
                     <div class="card-body memeResults">
                         <!-- Meme results go here -->
                     </div>
@@ -73,7 +76,7 @@
                 <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
                     <a class="card-title" id="youtubeTitle">YouTube Videos</a>
                 </div>
-                <div id="collapseThree" class="collapse" data-parent="#accordion" >
+                <div id="collapseThree" class="collapse" data-parent="#accordion">
                     <div class="card-body" class="youtubeResults">
                         <!-- YouTube results go here -->
                         <div id='player1'></div>
@@ -97,15 +100,11 @@
         </div>
     </div>
     <footer>
-            <p>Contact information: <a href="mailto:sapnapai81@gmail.com">
-                 sapnapai81@gmail.com</a><a href="mailto:someone@example.com">
-                         someone@example.com</a><a href="mailto:someone@example.com">
-                                 someone@example.com</a></p>
-          </footer>      
+        <p>© 2018 Copyright: GifTube </p>
+    </footer>
 
     <!-- jQuery js -->
-    <script src=./assets/jquery-3.3.1.min.js></script>
-    <!-- Bootstrap js -->
+    <script src=./assets/jquery-3.3.1.min.js> </script> <!-- Bootstrap js -->
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
     <!-- Popper js -->
     <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
