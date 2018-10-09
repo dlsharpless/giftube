@@ -43,6 +43,6 @@ let displayMemes = function () {
 }
 
 $("#searchButton").on('click', function(event){
-    event.preventDefault();
+     event.preventDefault();
     displayMemes();
 })

@@ -12,6 +12,7 @@
     <!-- Imported fonts -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
     <!-- Local styling -->
     <link rel="stylesheet" href="./assets/style.css">
 </head>
@@ -22,7 +23,7 @@
 <!-- Row for header  -->
         <div class="row mt-2 mb-3 justify-content-center">
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <h4><img src="./assets/favicon.png" width="80" >GifTube</h4>
+                <h4><img id="iconStyle" src="./assets/favicon.png" width="80" >  GifTube</h4>
             </div>
         </div>
 <!-- Row 2 for form -->
@@ -30,11 +31,11 @@
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 format">
                 <form class="form_formatting">
                     <div class="form-group ">
-                        <label id="style-label"for="searchTerm">Search Item</label>
+                        <label class="style-label" for="searchTerm">Search Item</label>
                         <input type="input" id="searchTerm">
                     </div>
                     <div class="form-group">
-                        <label for="numberOfRecords">Number of Records to Retrieve:</label>
+                        <label class="style-label" for="numberOfRecords">Number of Records to Retrieve:</label>
                         <select id="numberOfRecords">
                             <option value="5">5</option>
                             <option value="10">10</option>
@@ -95,6 +96,12 @@
             </div>
         </div>
     </div>
+    <footer>
+            <p>Contact information: <a href="mailto:sapnapai81@gmail.com">
+                 sapnapai81@gmail.com</a><a href="mailto:someone@example.com">
+                         someone@example.com</a><a href="mailto:someone@example.com">
+                                 someone@example.com</a></p>
+          </footer>      
 
     <!-- jQuery js -->
     <script src=./assets/jquery-3.3.1.min.js></script>

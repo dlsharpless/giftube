@@ -1,41 +1,27 @@
-let player1;
-let videoArr = [];
-function youtube(event) {
+function displayVideos() {
+  $(".youtubeResults").empty();
+  let inquiry = $("#searchTerm").val().trim();
+  let numberOfRecords = $("#numberOfRecords").val();
+  $.ajax({
+    url: `https://content.googleapis.com/youtube/v3/search?q=${inquiry}&maxResults=25&part=snippet&key=AIzaSyAfBQxSnvQmRhhgFE5qfViIVfDvZ_t-u1Q`,
+    method: "GET"
+  }).then(function (response) {
+    let numberOfResults = 0;
+    if (response.items[0]) {
+      for (let i = 0; i < numberOfRecords; i++) {
+        if (response.items[i].id.videoId) {
+          $(".youtubeResults").append(`<iframe height="200" src="https://www.youtube-nocookie.com/embed/${response.items[i].id.videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`);
+          numberOfResults++;
+        } else if (response.items.length > numberOfRecords) {
+              numberOfRecords++;
+        }
+      }
+    }
+    $("#youtubeTitle").text(`YouTube Videos [${numberOfResults} found]`);
+  });
+}
+
+$("#searchButton").on("click", function(event){
   event.preventDefault();
-  $('.youtubeResults').empty(); 
-  const apiKey = 'AIzaSyAfBQxSnvQmRhhgFE5qfViIVfDvZ_t-u1Q';
-  let input = $("#searchTerm").val().trim();
-  let queryURL = `https://content.googleapis.com/youtube/v3/search?q=${input}&maxResults=25&part=snippet&key=${apiKey}`;
-
-  //Initialize the youtube JavaScript client library.
-$.ajax({
-  url: queryURL,
-  method: 'GET'
-}).then(function (response) {
-  let value = $('#numberOfRecords').val();
-
-  for (let i = 0; i <= `${value}`; i++) {
-      let videoID = response.items[i].id.videoId
-      videoArr.push(videoID)
-  }
-
-  onYouTubePlayerAPIReady(videoArr);
-console.log(videoArr)
-});
-
-function onYouTubePlayerAPIReady(videoArr) {
-  // Load the IFrame Player API code asynchronously.
-
-  // Replace the 'ytplayer' element with an <iframe> and
-  // YouTube player after the API code downloads.
-  for(let i = 0; i < videoArr.length; i++){
-      new YT.Player('player' + i, {
-          height: '200',
-          width: '200',
-          videoId: videoArr[i]
-      });
-  }
-}
-}
-
-$('#searchButton').on('click', youtube)
+  displayVideos();
+})
