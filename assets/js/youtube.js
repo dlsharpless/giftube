@@ -1,27 +1,72 @@
-function displayVideos() {
-  $(".youtubeResults").empty();
-  let inquiry = $("#searchTerm").val().trim();
-  let numberOfRecords = $("#numberOfRecords").val();
+let player1;
+let videoArr = [];
+let videoID = '';
+
+
+//youtube api call function starts here
+function youtube(event) {
+  event.preventDefault();
+  //empty results for every new search
+  $('.youtubeResults').empty();
+
+  //grabbing value selected from dropdown for the number of results to display.
+  let input = $("#searchTerm").val().trim();
+  let value = $("#numberOfRecords").val();
+  const apiKey = 'AIzaSyAfBQxSnvQmRhhgFE5qfViIVfDvZ_t-u1Q';
+  let queryURL = `https://content.googleapis.com/youtube/v3/search?q=${input}&maxResults=25&part=snippet&key=${apiKey}`;
+
+  //creates empty video array for video ids to be stored
+  videoArr = [];
+
+  //Youtube API call to get video ids.
   $.ajax({
-    url: `https://content.googleapis.com/youtube/v3/search?q=${inquiry}&maxResults=25&part=snippet&key=AIzaSyAfBQxSnvQmRhhgFE5qfViIVfDvZ_t-u1Q`,
-    method: "GET"
+    url: queryURL,
+    method: 'GET',
+
   }).then(function (response) {
-    let numberOfResults = 0;
+    // console.log(response.items)
+
+    let numOfResults = 0;
+
+    //if function checks for a true response
     if (response.items[0]) {
-      for (let i = 0; i < numberOfRecords; i++) {
-        if (response.items[i].id.videoId) {
-          $(".youtubeResults").append(`<iframe height="200" src="https://www.youtube-nocookie.com/embed/${response.items[i].id.videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`);
-          numberOfResults++;
-        } else if (response.items.length > numberOfRecords) {
-              numberOfRecords++;
+
+      //creates array that holds video ids according to the value is selected by the user. 
+      for (let i = 0; i < `${value}`; i++) {
+
+        //creating variable for video id
+        videoID = response.items[i].id.videoId;
+        if (videoID) {
+
+          //pushing video ids into the array
+          videoArr.push(videoID);
+
+          //dynamically creating the iframe player
+          $('.youtubeResults').append(`<iframe height="200" src="https://www.youtube-nocookie.com/embed/${videoID}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`);
+
+        } else if (response.items.length > value) {
+          value++;
         }
       }
     }
-    $("#youtubeTitle").text(`YouTube Videos [${numberOfResults} found]`);
+
+    //If the length of the video array is less than the results requested...
+    if (videoArr.length < value) {
+      //then the number of results becomes the length of the array
+      numOfResults = videoArr.length;
+      //display the number of results
+      $('#youtubeTitle').text(`YouTube Videos [${numOfResults} Found]`)
+      //else if the number of results is the same as the requested results...
+    } else if (numOfResults = value) {
+      //display the number of results requested
+      $('#youtubeTitle').text(`YouTube Videos [${value} Found]`)
+    } else {
+      //lastly, if there are no results returned then display 0 videos found
+      $('#youtubeTitle').text('YouTube Videos [0 Found]')
+    }
+
   });
 }
 
-$("#searchButton").on("click", function(event){
-  event.preventDefault();
-  displayVideos();
-})
+//event listener for search button click
+$('#searchButton').on('click', youtube)
