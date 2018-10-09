@@ -27,40 +27,44 @@ function youtube(event) {
     // console.log(response.items)
 
     let numOfResults = 0;
-    
+
+    //if function checks for a true response
     if (response.items[0]) {
-      
+
       //creates array that holds video ids according to the value is selected by the user. 
       for (let i = 0; i < `${value}`; i++) {
+
         //creating variable for video id
         videoID = response.items[i].id.videoId;
-        if(videoID){
-        
-        //pushing video ids into the array
-        videoArr.push(videoID);
-        
-        //dynamically creating the iframe player
-        $('.youtubeResults').append(`<iframe height="200" src="https://www.youtube-nocookie.com/embed/${videoID}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`);
-      
-      } else if (response.items.length > value) {
-        value++;
-    
+        if (videoID) {
+
+          //pushing video ids into the array
+          videoArr.push(videoID);
+
+          //dynamically creating the iframe player
+          $('.youtubeResults').append(`<iframe height="200" src="https://www.youtube-nocookie.com/embed/${videoID}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`);
+
+        } else if (response.items.length > value) {
+          value++;
+        }
       }
     }
-  }
-  
-    //If the length of the video array is less than the results requested
+
+    //If the length of the video array is less than the results requested...
     if (videoArr.length < value) {
-      
+      //then the number of results becomes the length of the array
       numOfResults = videoArr.length;
+      //display the number of results
       $('#youtubeTitle').text(`YouTube Videos [${numOfResults} Found]`)
+      //else if the number of results is the same as the requested results...
     } else if (numOfResults = value) {
-      
+      //display the number of results requested
       $('#youtubeTitle').text(`YouTube Videos [${value} Found]`)
     } else {
+      //lastly, if there are no results returned then display 0 videos found
       $('#youtubeTitle').text('YouTube Videos [0 Found]')
     }
-    
+
   });
 }
 
