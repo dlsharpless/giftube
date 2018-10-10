@@ -1,4 +1,12 @@
 /* Styling for Gify results */
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #F5F5F5;
+    border-bottom: 2px solid rgba(0,0,0,.125);
+    font-family: 'Righteous', cursive;
+}
+
 .accordion .card-header:after {
     font-family: 'FontAwesome';  
     content: "\f068";
@@ -9,6 +17,11 @@
     content: "\f067"; 
 }
 
+.accordion .card-body{
+    /* symbol for "collapsed" panels */
+    background-color: #313B41; 
+   
+}
 .format {
     border-top: 15px solid #614396;
     border-right: 15px solid #F9F58A;
@@ -19,31 +32,51 @@
 
   img {
     vertical-align: middle;
-     border: 5px solid #F9F58A;
+     border: 5px solid #A23D37;
+     margin-right: 20px;
+     margin-bottom: 20px;
 }
 
+#iconStyle{
+    border: none; 
+}
+
+.style-label{
+    font-family: 'Righteous', cursive;
+    
+}
   body {
     margin: 0;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.5;
-    color: #EB4F53;
+    color: #252C30;
     text-align: left;
     background-color: #fff;
+    background-image: url(./bedge_grunge_@2X.png);
 }
 
 h4{
     font-family: 'Lobster', cursive;
     font-weight: 900;
-    font-size: 60px;
+    font-size: 65px;
     color: #EB4F53;
+    
    
- };
+ }
 
+ footer{
+     padding: 50px;
+     margin-left: 35%;
+     padding-bottom: 0px;
+ }
 
-
-
+ iframe {
+    border: 5px solid #A23D37;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
 
 
 

@@ -66,6 +66,6 @@ let displayMemes = function () {
 
 // Pull and display memes when search button is clicked
 $("#searchButton").on('click', function(event){
-    event.preventDefault();
+     event.preventDefault();
     displayMemes();
 })
