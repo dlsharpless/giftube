@@ -2,7 +2,6 @@ let player1;
 let videoArr = [];
 let videoID = '';
 
-
 //youtube api call function starts here
 function youtube(event) {
   event.preventDefault();

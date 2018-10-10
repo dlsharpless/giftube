@@ -9,8 +9,8 @@ let displayMemes = function () {
     $.ajax({
         url: `https://api.imgur.com/3/gallery/search/top?q_any=meme%20memes&q_all=${inquiry}`,
         type: "GET",
-        headers: {Authorization: 'Client-ID 95cb0dd822c5eea'}
-    }).then(function(response) {
+        headers: { Authorization: 'Client-ID 95cb0dd822c5eea' }
+    }).then(function (response) {
         // Start result count at zero
         let numberOfResults = 0;
         // Check that results have been returned
@@ -21,7 +21,7 @@ let displayMemes = function () {
             }
             for (i = 0; i < numberOfRecords; i++) {
                 // IIFE inside for loop allows for kicking out the iteration under certain conditions
-                (function() {
+                (function () {
                     // Filter out nsfw material, animated GIFs, and videos
                     if (response.data[i].nsfw || response.data[i].looping || response.data[i].mp4) {
                         // Skip the result and look for an additional one from the response if nsfw
@@ -44,13 +44,13 @@ let displayMemes = function () {
                                 // Kick out the iteration if the result is disqualified
                                 return;
                             } else {
-                            newMeme = $(`<img height="200" src=${response.data[i].images[0].link}>`);
+                                newMeme = $(`<img height="200" src=${response.data[i].images[0].link}>`);
                             }
                         }
                         // Add tooltip on image
-                        newMeme.attr("data-toggle","tooltip");
-                        newMeme.attr("data-placement","top");
-                        newMeme.attr("title","Right click to copy image address");
+                        newMeme.attr("data-toggle", "tooltip");
+                        newMeme.attr("data-placement", "top");
+                        newMeme.attr("title", "Right click to copy image address");
                         // Append img to results div
                         $(".memeResults").append(newMeme);
                         // Count the number of results being displayed
@@ -65,7 +65,7 @@ let displayMemes = function () {
 }
 
 // Pull and display memes when search button is clicked
-$("#searchButton").on('click', function(event){
-     event.preventDefault();
+$("#searchButton").on('click', function (event) {
+    event.preventDefault();
     displayMemes();
 })
