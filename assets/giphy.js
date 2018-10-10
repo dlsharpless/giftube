@@ -9,7 +9,7 @@ let displayGIFs = function () {
     $.ajax({
         url: `http://api.giphy.com/v1/gifs/search?q=${inquiry}&api_key=njATj4tDM5p7IszkVAvnA35pkQe9v1GP&limit=1000`,
         method: "GET"
-    }).then(function(response) {
+    }).then(function (response) {
         // Start result count at zero
         let numberOfResults = 0;
         // Check that results have been returned
@@ -24,16 +24,16 @@ let displayGIFs = function () {
                     // Dynamically create image elements
                     let newGIF = $(`<img src=${response.data[i].images.fixed_height.url}>`);
                     // Add tooltip on image
-                    newGIF.attr("data-toggle","tooltip");
-                    newGIF.attr("data-placement","top");
-                    newGIF.attr("title","Right click to copy image address");
+                    newGIF.attr("data-toggle", "tooltip");
+                    newGIF.attr("data-placement", "top");
+                    newGIF.attr("title", "Right click to copy image address");
                     // Append img to results div
                     $(".gifResults").append(newGIF);
                     // Count the number of results being displayed
                     numberOfResults++;
-                // Skip the result and look for an additional one from the response if R-rated
+                    // Skip the result and look for an additional one from the response if R-rated
                 } else if (response.data.length > numberOfRecords) {
-                        numberOfRecords++;
+                    numberOfRecords++;
                 }
             }
         }
@@ -43,7 +43,7 @@ let displayGIFs = function () {
 }
 
 // Pull and display GIFs when search button is clicked
-$("#searchButton").on("click", function(event){
+$("#searchButton").on("click", function (event) {
     event.preventDefault();
     displayGIFs();
 })

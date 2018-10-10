@@ -1,12 +1,12 @@
-/* Styling for Gify results */
+/* Styling for Giphy results */
 .accordion .card-header:after {
-    font-family: 'FontAwesome';  
+    font-family: 'FontAwesome';
     content: "\f068";
-    float: right; 
+    float: right;
 }
 .accordion .card-header.collapsed:after {
     /* symbol for "collapsed" panels */
-    content: "\f067"; 
+    content: "\f067";
 }
 
 .format {
@@ -15,11 +15,11 @@
     border-bottom: 15px solid #5CBC72;
     border-left: 15px solid #30B9F0;
     padding: 30px;
-  } 
+  }
 
   img {
     vertical-align: middle;
-     border: 5px solid #F9F58A;
+    border: 5px solid #F9F58A;
 }
 
   body {
@@ -38,16 +38,4 @@ h4{
     font-weight: 900;
     font-size: 60px;
     color: #EB4F53;
-   
  };
-
-
-
-
-
-
-
-
-
-
-    
