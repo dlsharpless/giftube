@@ -7,7 +7,7 @@ let displayGIFs = function () {
     let numberOfRecords = $("#numberOfRecords").val();
     // Make ajax call
     $.ajax({
-        url: `http://api.giphy.com/v1/gifs/search?q=${inquiry}&api_key=njATj4tDM5p7IszkVAvnA35pkQe9v1GP&limit=1000`,
+        url: `https://api.giphy.com/v1/gifs/search?q=${inquiry}&api_key=njATj4tDM5p7IszkVAvnA35pkQe9v1GP&limit=1000`,
         method: "GET"
     }).then(function (response) {
         // Start result count at zero

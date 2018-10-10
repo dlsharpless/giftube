@@ -2,7 +2,6 @@ let player1;
 let videoArr = [];
 let videoID = '';
 
-
 //youtube api call function starts here
 function youtube(event) {
   event.preventDefault();
@@ -13,7 +12,7 @@ function youtube(event) {
   let input = $("#searchTerm").val().trim();
   let value = $("#numberOfRecords").val();
   const apiKey = 'AIzaSyAfBQxSnvQmRhhgFE5qfViIVfDvZ_t-u1Q';
-  let queryURL = `https://content.googleapis.com/youtube/v3/search?q=${input}&maxResults=25&part=snippet&key=${apiKey}`;
+  let queryURL = `https://content.googleapis.com/youtube/v3/search?q=${input}&maxResults=50&part=snippet&key=${apiKey}`;
 
   //creates empty video array for video ids to be stored
   videoArr = [];
