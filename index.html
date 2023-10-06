@@ -1,92 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <!-- Favicon -->
-    <link rel="icon" href="./assets/media/favicon.png">
+    <link rel="icon" href="./assets/media/favicon.png" />
     <title>GifTube</title>
     <!-- Bootstrap css -->
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <!-- Imported icon -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <!-- Import fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Lobster"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Righteous"
+      rel="stylesheet"
+    />
     <!-- Local styling -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
 
-<body>
+  <body>
     <!-- HTM code for heading and Form-->
     <div class="container">
-        <!-- Row for header  -->
-        <div class="row mt-2 mb-3 justify-content-center">
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mt-2">
-                <h4><img id="iconStyle" src="./assets/media/favicon.png" width="80">GifTube</h4>
-            </div>
+      <!-- Row for header  -->
+      <div class="row mt-2 mb-3 justify-content-center">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mt-2">
+          <h4>
+            <img
+              id="iconStyle"
+              src="./assets/media/favicon.png"
+              width="80"
+            />GifTube
+          </h4>
         </div>
-        <!-- Row 2 for form -->
-        <div class="row mb-5 justify-content-center">
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 format">
-                <form class="form_formatting">
-                    <div class="form-group ">
-                        <label class="style-label" for="searchTerm">Search Item</label>
-                        <input type="input" id="searchTerm">
-                    </div>
-                    <div class="form-group">
-                        <label class="style-label" for="numberOfRecords">Number of Records to Retrieve:</label>
-                        <select id="numberOfRecords">
-                            <option value="10">10</option>
-                            <option value="20">20</option>
-                            <option value="30">30</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-success" id="searchButton">Search</button>
-                        <button class="btn btn-success" id="clearButton">Clear</button>
-                    </div>
-                </form>
+      </div>
+      <!-- Row 2 for form -->
+      <div class="row mb-5 justify-content-center">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 format">
+          <form class="form_formatting">
+            <div class="form-group">
+              <label class="style-label" for="searchTerm">Search Item</label>
+              <input type="input" id="searchTerm" />
             </div>
+            <div class="form-group">
+              <label class="style-label" for="numberOfRecords"
+                >Number of Records to Retrieve:</label
+              >
+              <select id="numberOfRecords">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-success" id="searchButton">Search</button>
+              <button class="btn btn-success" id="clearButton">Clear</button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
     <!-- HTML code for Accordion to display Giphy, meme, and YouTube results -->
     <div class="container-fluid">
-        <div id="accordion" class="accordion">
-            <div class="card mb-0">
-                <div class="card-header collapsed" data-toggle="collapse" href="#collapseOne">
-                    <a class="card-title" id="giphyTitle">Giphy GIFs</a>
-                </div>
-                <div id="collapseOne" class="card-body collapse" data-parent="#accordion">
-                    <div class="card-body gifResults">
-                        <!-- GIF results go here -->
-                    </div>
-                </div>
-                <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                    <a class="card-title" id="imgurTitle">Imgur Memes</a>
-                </div>
-                <div id="collapseTwo" class="card-body collapse" data-parent="#accordion">
-                    <div class="card-body memeResults">
-                        <!-- Meme results go here -->
-                    </div>
-                </div>
-                <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                    <a class="card-title" id="youtubeTitle">YouTube Videos</a>
-                </div>
-
-                <div id="collapseThree" class="collapse" data-parent="#accordion">
-                    <div class="card-body youtubeResults">
-                        <!-- YouTube results go here -->
-                    </div>
-                </div>
+      <div id="accordion" class="accordion">
+        <div class="card mb-0">
+          <div
+            class="card-header collapsed"
+            data-toggle="collapse"
+            href="#collapseOne"
+          >
+            <a class="card-title" id="giphyTitle">Giphy GIFs</a>
+          </div>
+          <div
+            id="collapseOne"
+            class="card-body collapse"
+            data-parent="#accordion"
+          >
+            <div class="card-body gifResults">
+              <!-- GIF results go here -->
             </div>
+          </div>
+          <div
+            class="card-header collapsed"
+            data-toggle="collapse"
+            data-parent="#accordion"
+            href="#collapseTwo"
+          >
+            <a class="card-title" id="imgurTitle">Imgur Memes</a>
+          </div>
+          <div
+            id="collapseTwo"
+            class="card-body collapse"
+            data-parent="#accordion"
+          >
+            <div class="card-body memeResults">
+              <!-- Meme results go here -->
+            </div>
+          </div>
+          <div
+            class="card-header collapsed"
+            data-toggle="collapse"
+            data-parent="#accordion"
+            href="#collapseThree"
+          >
+            <a class="card-title" id="youtubeTitle">YouTube Videos</a>
+          </div>
+
+          <div id="collapseThree" class="collapse" data-parent="#accordion">
+            <div class="card-body youtubeResults">
+              <!-- YouTube results go here -->
+            </div>
+          </div>
         </div>
+      </div>
     </div>
     <footer>
-        <p>© 2018 GifTube</p>
+      <p>© 2018 GifTube</p>
     </footer>
 
     <!-- jQuery js -->
@@ -101,6 +139,5 @@
     <script src="./assets/js/giphy.js"></script>
     <!-- Imgur js -->
     <script src="./assets/js/imgur.js"></script>
-</body>
-
+  </body>
 </html>
