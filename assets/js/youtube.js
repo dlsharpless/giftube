@@ -1,8 +1,7 @@
-let videoArr = [];
-let videoID = "";
-
 //youtube api call function starts here
 function youtube() {
+  let videoArr = [];
+  let videoID = "";
   //empty results for every new search
   $(".youtubeResults").empty();
 
