@@ -2,8 +2,7 @@ let videoArr = [];
 let videoID = "";
 
 //youtube api call function starts here
-function youtube(event) {
-  event.preventDefault();
+function youtube() {
   //empty results for every new search
   $(".youtubeResults").empty();
 
@@ -62,5 +61,8 @@ function youtube(event) {
   });
 }
 
-//event listener for search button click
-$("#searchButton").on("click", youtube);
+// Pull and display videos when search button is clicked
+$("#searchButton").on("click", function (event) {
+  event.preventDefault();
+  youtube();
+});
