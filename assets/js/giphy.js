@@ -1,5 +1,5 @@
 // Make ajax call to Giphy api, get response, filter, and display on the page
-let displayGIFs = function () {
+function displayGIFs() {
   // Empty div before fetching results
   $(".gifResults").empty();
   // Get user input
@@ -42,7 +42,7 @@ let displayGIFs = function () {
     // Display number of results rendered
     $("#giphyTitle").text(`Giphy GIFs [${numberOfResults} found]`);
   });
-};
+}
 
 // Pull and display GIFs when search button is clicked
 $("#searchButton").on("click", function (event) {

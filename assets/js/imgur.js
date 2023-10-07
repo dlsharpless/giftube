@@ -1,5 +1,5 @@
 // Make ajax call to Imgur api, get response, filter, and display on the page
-let displayMemes = function () {
+function displayMemes() {
   // Empty div before fetching results
   $(".memeResults").empty();
   // Get user input
@@ -73,7 +73,7 @@ let displayMemes = function () {
     // Display number of results rendered
     $("#imgurTitle").text(`Imgur Memes [${numberOfResults} found]`);
   });
-};
+}
 
 // Pull and display memes when search button is clicked
 $("#searchButton").on("click", function (event) {
