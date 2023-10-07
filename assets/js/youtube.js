@@ -1,4 +1,3 @@
-let player1;
 let videoArr = [];
 let videoID = "";
 
